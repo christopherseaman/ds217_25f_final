@@ -607,7 +607,9 @@ def test_q8_key_findings_content(setup_data):
 def test_q9_report_exists(setup_data):
     """Test that Q9 report file exists."""
     assert os.path.exists("report.md"), (
-        "report.md not found in assignment root directory"
+        "report.md not found in assignment root directory. "
+        "Q9 requires creating report.md as the final deliverable (see q9_writeup.md for instructions). "
+        "Note: q9_writeup.md contains instructions; report.md is the actual report to submit."
     )
 
 
