@@ -30,10 +30,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Install repo requirements first (student's code dependencies)
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        # Install test requirements (may have additional test-specific packages)
+        # Install dependencies from the downloaded test requirements file
         if [ -f .github/test/requirements.txt ]; then pip install -r .github/test/requirements.txt; fi
+        # Install repo requirements if they exist (may override or add to test requirements)
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Setup Jupyter Kernel
       run: |
